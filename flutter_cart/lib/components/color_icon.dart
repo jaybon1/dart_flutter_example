@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// 사용하지 않음
 class ColorIcon extends StatelessWidget {
   final Color mColor;
 

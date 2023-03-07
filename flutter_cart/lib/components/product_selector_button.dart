@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cart/constants.dart';
 
+// 사용하지 않음
 class ProductSelectorButton extends StatelessWidget {
   final int id;
   final int selectedIconNum;
