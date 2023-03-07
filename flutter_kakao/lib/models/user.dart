@@ -46,11 +46,6 @@ List<User> friends = [
     intro: "4딸라",
   ),
   User(
-    backgroundImage: "${_urlPrefix}_woman_3.jpg",
-    name: "심영",
-    intro: "내가 고자라니",
-  ),
-  User(
     backgroundImage: "${_urlPrefix}_man_4.jpg",
     name: "교강용",
     intro: "더 이상의 자세한 설명은 생략한다.",
