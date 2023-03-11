@@ -6,6 +6,16 @@
 
   인스턴스의 메소드 및 변수와는 다르게 클래스 이름으로 접근한다.
 
+  아래 고양이 클래스를 예로 들면,
+
+  고양이는 고양이가 생성될 때마다 증가하는 catCount를 가지고 있다.
+
+  그리고 고양이가 생성될 때마다 catCount를 출력하는 printCatCount() 메소드를 가지고 있다.
+
+  이때, catCount와 printCatCount()는 고양이의 인스턴스가 아닌 고양이 클래스에 속한다.
+
+  catCount와 printCatCount()는 고양이의 특성이 아닌, 전지적 3인칭 시점에서 고양이를 설명하는 것이다.
+
   class Cat {
     static int catCount = 0;
 

@@ -37,23 +37,21 @@ void main(List<String> args) {
 
   // 문제 6. shuffle를 이용해서 tempList1을 랜덤하게 섞고 출력하시오.
 
-  // 문제 7. reverse를 이용해서 tempList1을 역순으로 정렬하고 출력하시오.
+  // 문제 7. join을 이용해서 tempList1을 문자열로 합치고 출력하시오.
 
-  // 문제 8. join을 이용해서 tempList1을 문자열로 합치고 출력하시오.
+  // 문제 8. split을 이용해서 문자열을 tempList1로 분리하고 출력하시오.
 
-  // 문제 9. split을 이용해서 문자열을 tempList1로 분리하고 출력하시오.
+  // 문제 9. map을 이용해서 tempList1의 요소를 2배로 만들고 출력하시오.(s19를 공부한 이후에 풀어보세요.)
 
-  // 문제 10. map을 이용해서 tempList1의 요소를 2배로 만들고 출력하시오.
+  // 문제 10. where를 이용해서 tempList1의 짝수만 출력하시오.(s19를 공부한 이후에 풀어보세요.)
 
-  // 문제 11. where를 이용해서 tempList1의 짝수만 출력하시오.
+  // 문제 11. forEach를 이용해서 tempList1의 요소를 반복하고 출력하시오.(s19를 공부한 이후에 풀어보세요.)
 
-  // 문제 12. forEach를 이용해서 tempList1의 요소를 반복하고 출력하시오.
+  // 문제 12. any를 이용해서 tempList1에 3이 있는지 확인하고 출력하시오.(s19를 공부한 이후에 풀어보세요.)
 
-  // 문제 13. any를 이용해서 tempList1에 3이 있는지 확인하고 출력하시오.
+  // 문제 13. every를 이용해서 tempList1의 모든 요소가 3보다 작은지 확인하고 출력하시오.(s19를 공부한 이후에 풀어보세요.)
 
-  // 문제 14. every를 이용해서 tempList1의 모든 요소가 3보다 작은지 확인하고 출력하시오.
+  // 문제 14. isEmpty를 이용해서 tempList1이 비어있는지 확인하고 출력하시오.
 
-  // 문제 15. isEmpty를 이용해서 tempList1이 비어있는지 확인하고 출력하시오.
-
-  // 문제 16. contains를 이용해서 tempList1에 3이 있는지 확인하고 출력하시오.
+  // 문제 15. contains를 이용해서 tempList1에 3이 있는지 확인하고 출력하시오.
 }

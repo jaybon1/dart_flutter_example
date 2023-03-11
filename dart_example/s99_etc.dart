@@ -26,6 +26,8 @@
   비동기
   https://dart.dev/guides/language/language-tour#asynchrony-support
 
+  // 위 내용까지는 꼭 읽어보기
+
   동시성
   https://dart.dev/guides/language/concurrency
 

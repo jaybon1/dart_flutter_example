@@ -57,5 +57,4 @@ void main(List<String> args) {
 
   // 문제 1. tempNum이 0이면 아래 리스트에 7을 추가하시오.
   List tempList = [4, 5, 6];
-  print(tempList);
 }

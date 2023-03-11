@@ -19,5 +19,5 @@
 void main(List<String> args) {
   const List tempList1 = [4, 5, 6];
   // 문제 1. 스프레드 연산자를 이용해서 아래 리스트에 tempList1을 추가하시오.
-  // List tempList2 = [1. 2, 3];
+  List tempList2 = [1, 2, 3];
 }

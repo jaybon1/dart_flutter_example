@@ -20,5 +20,5 @@ void main(List<String> args) {
   print(privateData.MIN_COUNT); // 정상 작동
   // print(privateData._MAX_COUNT); // 에러 발생
 
-  // 문제 없음. 위 내용을 잘 읽어볼 것.
+  // 문제 1. privateData.dart 파일에서 _MY_NUM을 가져와서 출력하시오.
 }

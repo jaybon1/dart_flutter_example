@@ -22,4 +22,6 @@ void main(List<String> args) {
   // 문제 4. myNum을 int 타입으로 변환하여 출력하시오.
 
   // 문제 5. myNum을 String 타입으로 변환하여 출력하시오.
+
+  // 문제 6. myNum을 문자열 보간을 이용해서 "123.523입니다."로 출력하시오."
 }
