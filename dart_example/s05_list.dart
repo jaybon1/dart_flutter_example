@@ -8,7 +8,6 @@
   indexOf: 요소의 인덱스를 반환한다.
   sort: 요소를 정렬한다.
   shuffle: 요소를 랜덤하게 섞는다.
-  reverse: 요소를 역순으로 정렬한다.
   join: 요소를 문자열로 합친다.
   split: 문자열을 요소로 분리한다.
   forEach: 요소를 반복한다.
@@ -19,6 +18,12 @@
   isEmpty: 요소가 비어있는지 확인한다.
   isNotEmpty: 요소가 비어있지 않은지 확인한다.
   contains: 요소가 포함되어 있는지 확인한다.
+
+
+  toList:
+  map, where 등은 Iterable로 반환되기 때문에 
+  다시 List로 만들어야한다. 
+  list.where().toList();
 
  */
 
@@ -33,13 +38,13 @@ void main(List<String> args) {
 
   // 문제 4. indexOf를 이용해서 3의 인덱스를 출력하시오.
 
-  // 문제 5. sort를 이용해서 tempList1을 정렬하고 출력하시오.
+  // 문제 5. sort를 이용해서 tempList1을 정렬하고 출력하시오.(s19를 공부한 이후에 풀어보세요.)
 
   // 문제 6. shuffle를 이용해서 tempList1을 랜덤하게 섞고 출력하시오.
 
   // 문제 7. join을 이용해서 tempList1을 문자열로 합치고 출력하시오.
 
-  // 문제 8. split을 이용해서 문자열을 tempList1로 분리하고 출력하시오.
+  // 문제 8. split을 이용해서 문제7번의 문자열을 분리하고 출력하시오.
 
   // 문제 9. map을 이용해서 tempList1의 요소를 2배로 만들고 출력하시오.(s19를 공부한 이후에 풀어보세요.)
 
