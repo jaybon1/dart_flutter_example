@@ -16,6 +16,9 @@
   List exampleList2 = [1, 2, 3]; // JS와 비슷
   List exampleList4 = [1, 3.14, "안녕", true]; // List<dynamic>
 
+  호출
+  exampleList1[0]
+
   내용 변경
   exampleList1[0] = 10;
   exampleList1.add(11);
@@ -25,6 +28,9 @@
   Map exampleMap2 = <String, int>{"a": 1, "b": 2, "c": 3};
   Map exampleMap3 = {"a": 1, "b": 2, "c": 3};
   Map exampleMap4 = {1: 1, true: "dd"}; // Map<dynamic,dynamic>
+
+  호출
+  exampleMap1["a"]
 
   내용 변경
   exampleMap1["a"] = 10;

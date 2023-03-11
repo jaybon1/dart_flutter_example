@@ -11,7 +11,7 @@
   exampleList ??= [1, 2, 3];
 
 
-  ?? 연산자는 null일 때만 값을 대입한다.
+  ?? 연산자는 null일 때만 값을 대입(할당)한다.
   
   dynamic example = null;
   List exampleList = example ?? [1, 2, 3];

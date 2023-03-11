@@ -59,15 +59,29 @@
  */
 
 void main(List<String> args) {
-  // 문제 1. final을 이용해서 List형 상수 tempList2를 선언하고 4, 5, 6을 대입하고 출력하시오.
+  // 문제 1. final을 이용해서 tempList2를 선언하고 [4, 5, 6]을 대입하고 출력하시오.
 
   // 문제 2. tempList2에 .add 메소드를 이용해서 7을 추가하고 출력하시오.
 
-  // 문제 3. const를 이용해서 List형 상수 tempList1를 선언하고 4, 5, 6을 대입하고 출력하시오.
+  // 문제 3. const를 이용해서 tempList1를 선언하고 [4, 5, 6]을 대입하고 출력하시오.
 
-  // 문제 4. tempList1에 .add 메소드를 이용해서 7을 추가하고 출력하시오.
+  try {
+    // 문제 4. tempList1에 .add 메소드를 이용해서 7을 추가하고 출력하시오.
+
+    print("실행");
+  } on Exception {
+    print("에러");
+  }
 
   // 문제 5. var를 이용해서 tempList3를 선언하고 const [4, 5, 6]을 대입하고 출력하시오.
 
-  // 문제 6. tempList3에 .add 메소드를 이용해서 7을 추가하고 출력하시오.
+  try {
+    // 문제 6. tempList3에 .add 메소드를 이용해서 7을 추가하고 출력하시오.
+
+    print("실행");
+  } on Exception {
+    print("에러");
+  }
+
+  // 문제 7. tempList3에 [7, 8, 9] 를 대입하고 출력하시오.
 }

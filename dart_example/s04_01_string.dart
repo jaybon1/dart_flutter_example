@@ -19,6 +19,11 @@
   String str2 = 'World!';
   String str3 = str1 + str2;
 
+  문자열과 다른 타입 더하기
+  String name = "홍길동";
+  int age = 20;
+  String intro = "홍길동" + "은 " + age.toString() + "살";
+
   문자열 보간
   문자열 보간은 문자열 내에 변수를 포함시키는 방법을 뜻한다.
   String name = '홍길동';
