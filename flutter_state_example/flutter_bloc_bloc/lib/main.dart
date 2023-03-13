@@ -6,7 +6,10 @@ import 'package:flutter_bloc_bloc/counter/view/counter_page.dart';
 
 void main() {
   Bloc.observer = const AppBlocObserver();
-  runApp(const MyApp());
+  runApp(BlocProvider(
+      create: (context) => CounterBloc(),
+      child: const MyApp()
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -20,10 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: BlocProvider(
-        create: (context) => CounterBloc(),
-        child: CounterPage(title: 'Counter')
-      ),
+      home: const CounterPage(title: 'Counter'),
     );
   }
 }
