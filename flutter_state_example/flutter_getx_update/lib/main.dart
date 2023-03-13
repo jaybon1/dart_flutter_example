@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
 
     Get.put(CounterGetx());
 
-    return GetMaterialApp(
+    return MaterialApp(
       title: 'getx Counter',
       theme: ThemeData(
         primarySwatch: Colors.blue,
