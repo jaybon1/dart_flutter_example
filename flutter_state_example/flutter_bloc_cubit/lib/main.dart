@@ -7,7 +7,10 @@ import 'app_bloc_observer.dart';
 
 void main() {
   Bloc.observer = const AppBlocObserver();
-  runApp(const MyApp());
+  runApp(BlocProvider(
+      create: (context) => CounterCubit(),
+      child: const MyApp()
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -21,10 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: BlocProvider(
-        create: (context) => CounterCubit(),
-        child: const CounterPage(title: 'Counter')
-      ),
+      home: const CounterPage(title: 'Counter'),
     );
   }
 }
