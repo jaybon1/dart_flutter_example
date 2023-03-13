@@ -11,51 +11,49 @@ class CounterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CounterBloc, int>(
-      builder: (context, state) {
-
-        var counterBloc = context.read<CounterBloc>();
-
-        return Scaffold(
-          appBar: AppBar(
-            title: Text(title),
-          ),
-          body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                const Text(
-                  'You have pushed the button this many times:',
-                ),
-                Text(
+    var counterBloc = context.read<CounterBloc>();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text(
+              'You have pushed the button this many times:',
+            ),
+            BlocBuilder<CounterBloc, int>(
+              builder: (context, state) {
+                return Text(
                   '$state',
                   style: Theme
                       .of(context)
                       .textTheme
                       .headlineMedium,
-                ),
-              ],
+                );
+              },
             ),
+          ],
+        ),
+      ),
+      floatingActionButton: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            onPressed: () => counterBloc.add(CounterChangeWith(counterBloc.state + 1)),
+            tooltip: 'Increment',
+            child: const Icon(Icons.add),
           ),
-          floatingActionButton: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              FloatingActionButton(
-                onPressed: () => counterBloc.add(CounterChangeWith(state + 1)),
-                tooltip: 'Increment',
-                child: const Icon(Icons.add),
-              ),
-              FloatingActionButton(
-                onPressed: () => counterBloc.add(CounterChangeWith(state - 1)),
-                tooltip: 'Decrement',
-                child: const Icon(Icons.remove),
-              ),
-            ],
-          ), // This trailing comma makes auto-formatting nicer for build methods.
-        );
-      },
-    );
+          FloatingActionButton(
+            onPressed: () => counterBloc.add(CounterChangeWith(counterBloc.state - 1)),
+            tooltip: 'Decrement',
+            child: const Icon(Icons.remove),
+          ),
+        ],
+      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );;
   }
 }
 
