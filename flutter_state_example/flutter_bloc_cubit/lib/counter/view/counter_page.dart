@@ -9,7 +9,11 @@ class CounterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var counterCubit = context.read<CounterCubit>();
+    // final counterCubit = context.read<CounterCubit>();
+    // read를 사용하면 화면은 변경하기 위해 BlocBuilder를 사용해야한다.
+    // watch는 바로 사용할 수 있다.
+    // read는 counter를 안 보는 페이지에서 사용하면 된다.
+    final counterCubit = context.watch<CounterCubit>();
 
     return Scaffold(
       appBar: AppBar(
@@ -22,17 +26,10 @@ class CounterPage extends StatelessWidget {
             const Text(
               'You have pushed the button this many times:',
             ),
-            BlocBuilder<CounterCubit, int>(
-              builder: (context, state) {
-                return Text(
-                  '$state',
-                  style: Theme
-                      .of(context)
-                      .textTheme
-                      .headlineMedium,
-                );
-              },
-            ),
+            Text(
+              '${counterCubit.state}',
+              style: Theme.of(context).textTheme.headlineMedium,
+            )
           ],
         ),
       ),
@@ -41,14 +38,12 @@ class CounterPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
-            onPressed: () =>
-                counterCubit.changeTo(counterCubit.state + 1),
+            onPressed: () => counterCubit.changeTo(counterCubit.state + 1),
             tooltip: 'Increment',
             child: const Icon(Icons.add),
           ),
           FloatingActionButton(
-            onPressed: () =>
-                counterCubit.changeTo(counterCubit.state - 1),
+            onPressed: () => counterCubit.changeTo(counterCubit.state - 1),
             tooltip: 'Decrement',
             child: const Icon(Icons.remove),
           ),
