@@ -2,16 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_bloc/counter/controller/counter_bloc.dart';
 
-
 class CounterPage extends StatelessWidget {
-
   final String title;
 
   const CounterPage({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var counterBloc = context.read<CounterBloc>();
+    var counterBloc = context.watch<CounterBloc>();
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
@@ -23,16 +21,9 @@ class CounterPage extends StatelessWidget {
             const Text(
               'You have pushed the button this many times:',
             ),
-            BlocBuilder<CounterBloc, int>(
-              builder: (context, state) {
-                return Text(
-                  '$state',
-                  style: Theme
-                      .of(context)
-                      .textTheme
-                      .headlineMedium,
-                );
-              },
+            Text(
+              '${counterBloc.state}',
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),
@@ -42,21 +33,23 @@ class CounterPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
-            onPressed: () => counterBloc.add(CounterChangeWith(counterBloc.state + 1)),
+            onPressed: () =>
+                counterBloc.add(CounterChangeWith(counterBloc.state + 1)),
             tooltip: 'Increment',
             child: const Icon(Icons.add),
           ),
           FloatingActionButton(
-            onPressed: () => counterBloc.add(CounterChangeWith(counterBloc.state - 1)),
+            onPressed: () =>
+                counterBloc.add(CounterChangeWith(counterBloc.state - 1)),
             tooltip: 'Decrement',
             child: const Icon(Icons.remove),
           ),
         ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
-    );;
+    );
+    ;
   }
 }
-
 
 //
 // class CounterPage extends StatefulWidget {
