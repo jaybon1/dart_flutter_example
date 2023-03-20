@@ -31,7 +31,7 @@ class MyInfo extends StatefulWidget {
 class _MyInfoState extends State<MyInfo> {
   
   // 바텀 네비의 상태를 관리할 변수
-  int bottomNavIndex = 0;
+  int bottomNavIndex = 2;
 
   @override
   Widget build(BuildContext context) {
