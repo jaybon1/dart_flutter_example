@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_navigator/view/third_page.dart';
+import 'package:flutter_navigator_named/view/third_page.dart';
 
 class SecondPage extends StatelessWidget {
   const SecondPage({super.key});
@@ -16,10 +16,7 @@ class SecondPage extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const ThirdPage()),
-                );
+                Navigator.pushNamed(context, '/third');
               },
               child: const Text('세번째 화면 열기\n(현재페이지 위로 열기)'),
             ),
@@ -28,7 +25,7 @@ class SecondPage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                if(!Navigator.canPop(context)) {
+                if (!Navigator.canPop(context)) {
                   showToast(context, "현재 페이지가 마지막 남은 페이지 입니다.");
                   return;
                 }

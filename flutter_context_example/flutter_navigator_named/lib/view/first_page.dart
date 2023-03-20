@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_navigator/view/second_page.dart';
+import 'package:flutter_navigator_named/view/second_page.dart';
 
 class FirstPage extends StatelessWidget {
   const FirstPage({super.key});
@@ -17,10 +17,7 @@ class FirstPage extends StatelessWidget {
             ElevatedButton(
               child: const Text('두번째 화면 열기\n(현재페이지 위로 열기)'),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const SecondPage()),
-                );
+                Navigator.pushNamed(context, '/second');
               },
             ),
             const SizedBox(
@@ -29,10 +26,7 @@ class FirstPage extends StatelessWidget {
             ElevatedButton(
               child: const Text('두번째 화면 열기\n(현재페이지를 교체해서 열기 )'),
               onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const SecondPage()),
-                );
+                Navigator.pushReplacementNamed(context, '/second');
               },
             )
           ],

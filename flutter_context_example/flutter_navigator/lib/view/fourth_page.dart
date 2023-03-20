@@ -1,40 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_navigator/view/second_page.dart';
-
-class FirstPage extends StatelessWidget {
-  const FirstPage({super.key});
+import 'package:flutter_navigator/view/first_page.dart';
+class FourthPage extends StatelessWidget {
+  const FourthPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('First Page'),
+        title: const Text('Fourth Page'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-              child: const Text('두번째 화면 열기\n(현재페이지 위로 열기)'),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const SecondPage()),
+                  MaterialPageRoute(
+                    builder: (context) => const FirstPage(),
+                  ),
                 );
               },
+              child: const Text('첫번째 화면 열기\n(현재페이지 위로 열기)'),
             ),
             const SizedBox(
               height: 20,
             ),
             ElevatedButton(
-              child: const Text('두번째 화면 열기\n(현재페이지를 교체해서 열기 )'),
               onPressed: () {
-                Navigator.pushReplacement(
+                Navigator.popUntil(
                   context,
-                  MaterialPageRoute(builder: (context) => const SecondPage()),
+                  (Route<dynamic> route) => route.isFirst,
                 );
               },
-            )
+              child: const Text('두번째 화면 돌아가기\n(나머지 없애기)'),
+            ),
           ],
         ),
       ),
