@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_http/post/model/dto/post_res_dto.dart';
 import 'package:flutter_http/post/model/repository/post_repository.dart';
+import 'package:flutter_http/routes.dart';
 
 // 페이지 내부 상태 관리를 위한 HookWidget
 class PostListPage extends HookWidget {
@@ -57,7 +58,7 @@ class PostListPage extends HookWidget {
                   // 페이지 이동시 값을 넘겨준다. arguments
                   // .then을 이용해서 페이지가 꺼지는 타이밍을 기다리거나
                   // 값을 반환 받을 수 있다.
-                  Navigator.pushNamed(context, '/detail',
+                  Navigator.pushNamed(context, Routes.second,
                       arguments: {"id": e.id}).then((value) {
                     print('Returned from new page');
                     print(value);
