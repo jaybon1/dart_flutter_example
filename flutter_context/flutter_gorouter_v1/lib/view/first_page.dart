@@ -18,6 +18,7 @@ class FirstPage extends StatelessWidget {
             ElevatedButton(
               child: const Text('첫번째 상세 화면 열기\n(extra)'),
               onPressed: () {
+                // Navigator.pushNamed(context, routeName)
                 context
                     .pushNamed(Routes.firstDetail);
               },
