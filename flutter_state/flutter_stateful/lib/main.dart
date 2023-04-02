@@ -11,6 +11,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
+    print("빌드");
     return MaterialApp(
       title: 'Stateful Counter',
       theme: ThemeData(

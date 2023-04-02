@@ -1,1 +1,0 @@
-// detail_page.dart
