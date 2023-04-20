@@ -30,6 +30,7 @@ class AnimatedScreen1 extends StatefulWidget {
 
 class _AnimatedScreen1State extends State<AnimatedScreen1>
     with SingleTickerProviderStateMixin {
+  double _scale = 0;
   late AnimationController _animationController;
   late Animation<double> _animation;
 
@@ -40,6 +41,13 @@ class _AnimatedScreen1State extends State<AnimatedScreen1>
         AnimationController(duration: const Duration(seconds: 2), vsync: this);
     _animation =
         Tween<double>(begin: 0, end: 1.5).animate(_animationController);
+
+    _animation.addListener(() {
+      setState(() {
+        _scale = _animation.value;
+      });
+    });
+
     _animationController.forward();
   }
 
@@ -61,8 +69,8 @@ class _AnimatedScreen1State extends State<AnimatedScreen1>
       ),
       appBar: AppBar(title: const Text('Animated Screen')),
       body: Center(
-        child: ScaleTransition(
-          scale: _animation,
+        child: Transform.scale(
+          scale: _scale,
           child: const Text(
             'Hello, world!',
             style: TextStyle(fontSize: 50),
@@ -73,39 +81,39 @@ class _AnimatedScreen1State extends State<AnimatedScreen1>
   }
 }
 
-// // 훅스 버전도 연결해서 작동시켜보자.
-// class AnimatedScreen extends HookWidget {
-//   const AnimatedScreen({super.key});
+// 훅스 버전도 연결해서 작동시켜보자.
+class AnimatedScreen extends HookWidget {
+  const AnimatedScreen({super.key});
 
-//   @override
-//   Widget build(BuildContext context) {
-//     final animationController =
-//         useAnimationController(duration: const Duration(seconds: 2));
-//     final animation = useAnimation(
-//         Tween<double>(begin: 0, end: 1.5).animate(animationController));
+  @override
+  Widget build(BuildContext context) {
+    final animationController =
+        useAnimationController(duration: const Duration(seconds: 2));
+    final scale = useAnimation(
+        Tween<double>(begin: 0, end: 1.5).animate(animationController));
 
-//     useEffect(() {
-//       animationController.forward();
-//     });
+    useEffect(() {
+      animationController.forward();
+    });
 
-//     return Scaffold(
-//       floatingActionButton: FloatingActionButton(
-//         onPressed: () {
-//           animationController.reset();
-//           animationController.forward();
-//         },
-//         child: const Icon(Icons.play_arrow),
-//       ),
-//       appBar: AppBar(title: const Text('Animated Screen')),
-//       body: Center(
-//         child: Transform.scale(
-//           scale: animation,
-//           child: const Text(
-//             'Hello, world!',
-//             style: TextStyle(fontSize: 50),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          animationController.reset();
+          animationController.forward();
+        },
+        child: const Icon(Icons.play_arrow),
+      ),
+      appBar: AppBar(title: const Text('Animated Screen')),
+      body: Center(
+        child: Transform.scale(
+          scale: scale,
+          child: const Text(
+            'Hello, world!',
+            style: TextStyle(fontSize: 50),
+          ),
+        ),
+      ),
+    );
+  }
+}
